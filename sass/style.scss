@@ -19,8 +19,7 @@ $flipDeg: -180deg;
 body{
   background-color: map-get($colors, 'background');
   font-family: inter;
-  display: grid;
-  place-items: center;
+
 }
 
 .card{
@@ -34,6 +33,12 @@ body{
     display: grid;
     place-items: center;
     width: clamp(px-to-rem(200px), 100%, px-to-rem(300px));
+    @include custom-media-query('desktop', 600px) {
+      width: clamp(px-to-rem(200px), 100%, px-to-rem(380px));
+    }
+    @include custom-media-query('mobile', 370px) {
+      width: clamp(px-to-rem(200px), 100%, px-to-rem(250px));
+    }
     aspect-ratio: 113/62;
 
     margin-inline: auto;
@@ -83,11 +88,12 @@ flex-direction: column;
 padding-inline: px-to-rem(24px);
 @include custom-media-query('desktop', 600px) {
   padding-inline: px-to-rem(84px);
+  padding-bottom: px-to-rem(32px);
 }
 
 
 &> .holder + .holder{
-  margin-top: px-to-rem(24px, 1em);
+  margin-top: px-to-rem(14px);
 }
 .holder{
   gap: px-to-rem(8px);
@@ -145,9 +151,20 @@ width: 100%;
   }
 }
 
-input {
+:is(input, select) {
   padding-inline: px-to-rem(8px);
   border:2px solid map-get($colors, 'grey');
   border-radius: px-to-rem(8px);
   padding-block: px-to-rem(8px);
+}
+
+.dccv{
+  display: flex;
+  flex-grow: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  input{
+    max-width: px-to-rem(52px);
+  }
+
 }

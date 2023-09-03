@@ -77,8 +77,6 @@ select {
 body {
   background-color: #dbfbe6;
   font-family: inter;
-  display: grid;
-  place-items: center;
 }
 
 .card {
@@ -100,6 +98,16 @@ body {
   translate: 0 3.25rem;
   transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
+}
+@media (min-width: 600px) {
+  .card_flip {
+    width: clamp(12.5rem, 100%, 23.75rem);
+  }
+}
+@media (max-width: 370px) {
+  .card_flip {
+    width: clamp(12.5rem, 100%, 15.625rem);
+  }
 }
 .card_flip:hover {
   transform: rotateX(-180deg);
@@ -141,10 +149,11 @@ body {
 @media (min-width: 600px) {
   .card_form {
     padding-inline: 5.25rem;
+    padding-bottom: 2rem;
   }
 }
 .card_form > .holder + .holder {
-  margin-top: 1.5em;
+  margin-top: 0.875rem;
 }
 .card_form .holder {
   gap: 0.5rem;
@@ -193,11 +202,21 @@ body {
   background-color: #186d38;
 }
 
-input {
+:is(input, select) {
   padding-inline: 0.5rem;
   border: 2px solid #D9D9D9;
   border-radius: 0.5rem;
   padding-block: 0.5rem;
+}
+
+.dccv {
+  display: flex;
+  flex-grow: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+.dccv input {
+  max-width: 3.25rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
