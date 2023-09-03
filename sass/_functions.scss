@@ -1,0 +1,21 @@
+$base-font-size: 16px;
+// Functon to covert pixel to rem
+@function px-to-rem($px, $suffix: 1rem) {
+  @return calc(($px / $base-font-size) * $suffix);
+}
+
+// Custom media query
+@mixin custom-media-query($device-type, $width) {
+  @if $device-type == 'mobile' {
+    @media (max-width: $width) {
+        @content;
+    }
+  } @else if $device-type == 'desktop' {
+    @media (min-width: $width) {
+        @content;
+    }
+  } @else {
+    @warn 'Invalid argument for custom-media-query mixin. Please use mobile or desktop.';
+  }
+}
+

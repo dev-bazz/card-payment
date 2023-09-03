@@ -74,5 +74,62 @@ select {
     scroll-behavior: auto !important;
   }
 }
+body {
+  background-color: #dbfbe6;
+  font-family: inter;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 36.75rem;
+  margin-inline: auto;
+  position: relative;
+  padding: 16px;
+  perspective: 62.5rem;
+  color: #52525C;
+}
+.card_flip {
+  display: grid;
+  place-items: center;
+  width: 70%;
+  height: 12.5rem;
+  margin-inline: auto;
+  position: relative;
+  color: #ffffff;
+  translate: 0 2.125rem;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+.card_flip:hover {
+  transform: rotateY(180deg);
+}
+.card_flip .back {
+  transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+}
+.card_ui:is(.front, .back) {
+  background: linear-gradient(78deg, #22d067 -0.78%, #166534 94.94%);
+  padding: 1em;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  backface-visibility: hidden;
+  user-select: none;
+}
+.card_ui .front {
+  z-index: 1000;
+}
+.card_form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  border-radius: 1.25rem;
+  padding-top: 5.125em;
+}
 
 /*# sourceMappingURL=styles.css.map */

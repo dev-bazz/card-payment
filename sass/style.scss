@@ -1,1 +1,83 @@
-@use './reset'
+@use './reset';
+@use './variables' as *;
+@use './functions' as *;
+
+@mixin card{
+  background: map-get($colors, "gradient");
+  padding: px-to-rem(16px, 1em);
+  border-radius: px-to-rem(16px);
+  box-shadow: $card_ui;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  backface-visibility: hidden;
+  user-select: none;
+}
+
+body{
+  background-color: map-get($colors, 'background');
+  font-family: inter;
+  display: grid;
+  place-items: center;
+}
+
+.card{
+  max-width: px-to-rem(588px);
+  margin-inline: auto;
+  position: relative;
+  padding: 16px;
+  perspective: px-to-rem(1000px);
+  color: map-get($colors, 'text');
+   &_flip{
+    display: grid;
+    place-items: center;
+    width: 70%;
+    height: px-to-rem(200px);
+    margin-inline: auto;
+    position: relative;
+    color: map-get($colors, 'white');
+    translate: 0 px-to-rem(34px);
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    &:hover{
+      transform: rotateY(180deg);
+    }
+
+    .front{
+
+    }
+    .back{
+      transform: rotateY(180deg);
+      display: grid;
+      place-items: center;
+    }
+   }
+
+
+  &_ui{
+ &:is(.front, .back){
+  @include card;
+ }
+
+
+
+
+
+  }
+  &_ui .front {
+    z-index: 1000;
+  }
+
+  &_form{
+    background-color: map-get($colors, 'white');
+    box-shadow: $main_card;
+    padding: px-to-rem(16px, 1em);
+    border-radius: px-to-rem(20px);
+    padding-top: px-to-rem(82px, 1em);
+
+  }
+}
+
+
+
