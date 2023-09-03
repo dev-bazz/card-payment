@@ -78,14 +78,14 @@ body{
     padding-top: px-to-rem(100px, 1em);
 display: flex;
 flex-direction: column;
-padding-inline: px-to-rem(60px);
+padding-inline: px-to-rem(70px);
 
 &> .holder + .holder{
   margin-top: px-to-rem(24px, 1em);
 }
 .holder{
   gap: px-to-rem(8px);
-  display: flex;
+   display: flex;
   flex-direction: column;
 }
 
@@ -94,13 +94,17 @@ padding-inline: px-to-rem(60px);
     display: flex;
     justify-content: space-between;
     gap: px-to-rem(8px);
+    flex-wrap: wrap;
     input{
       max-width: px-to-rem(80px);
     }
   }
 }
 
-
+.card_holder{
+  display: flex;
+  flex-direction: column;
+}
 
   }
 }

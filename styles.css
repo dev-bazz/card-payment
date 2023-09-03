@@ -136,7 +136,7 @@ body {
   padding-top: 6.25em;
   display: flex;
   flex-direction: column;
-  padding-inline: 3.75rem;
+  padding-inline: 4.375rem;
 }
 .card_form > .holder + .holder {
   margin-top: 1.5em;
@@ -150,9 +150,14 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .card_form .card_number .inputs input {
   max-width: 5rem;
+}
+.card_form .card_holder {
+  display: flex;
+  flex-direction: column;
 }
 
 .form_content {
