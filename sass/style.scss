@@ -78,7 +78,7 @@ body{
     padding-top: px-to-rem(100px, 1em);
 display: flex;
 flex-direction: column;
-padding-inline: px-to-rem(70px);
+
 
 &> .holder + .holder{
   margin-top: px-to-rem(24px, 1em);

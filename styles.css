@@ -136,7 +136,6 @@ body {
   padding-top: 6.25em;
   display: flex;
   flex-direction: column;
-  padding-inline: 4.375rem;
 }
 .card_form > .holder + .holder {
   margin-top: 1.5em;
