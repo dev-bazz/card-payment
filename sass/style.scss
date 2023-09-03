@@ -4,7 +4,7 @@
 
 @mixin card{
   background: map-get($colors, "gradient");
-  padding: px-to-rem(16px, 1em);
+  padding: px-to-rem(24px, 1em) px-to-rem(20px, 1em);
   border-radius: px-to-rem(16px);
   box-shadow: $card_ui;
   position: absolute;
@@ -14,7 +14,7 @@
   backface-visibility: hidden;
   user-select: none;
 }
-
+$flipDeg: -180deg;
 body{
   background-color: map-get($colors, 'background');
   font-family: inter;
@@ -37,18 +37,21 @@ body{
     margin-inline: auto;
     position: relative;
     color: map-get($colors, 'white');
-    translate: 0 px-to-rem(34px);
+    translate: 0 px-to-rem(52px);
     transition: transform 0.8s ease-in-out;
     transform-style: preserve-3d;
     &:hover{
-      transform: rotateY(180deg);
+      transform: rotateX($flipDeg);
     }
-
+.icons{
+  display: flex;
+  justify-content: space-between;
+}
     .front{
 
     }
     .back{
-      transform: rotateY(180deg);
+      transform: rotateX($flipDeg);
       display: grid;
       place-items: center;
     }
@@ -61,9 +64,6 @@ body{
  }
 
 
-
-
-
   }
   &_ui .front {
     z-index: 1000;
@@ -74,7 +74,7 @@ body{
     box-shadow: $main_card;
     padding: px-to-rem(16px, 1em);
     border-radius: px-to-rem(20px);
-    padding-top: px-to-rem(82px, 1em);
+    padding-top: px-to-rem(100px, 1em);
 
   }
 }

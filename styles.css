@@ -97,21 +97,25 @@ body {
   margin-inline: auto;
   position: relative;
   color: #ffffff;
-  translate: 0 2.125rem;
+  translate: 0 3.25rem;
   transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
 }
 .card_flip:hover {
-  transform: rotateY(180deg);
+  transform: rotateX(-180deg);
+}
+.card_flip .icons {
+  display: flex;
+  justify-content: space-between;
 }
 .card_flip .back {
-  transform: rotateY(180deg);
+  transform: rotateX(-180deg);
   display: grid;
   place-items: center;
 }
 .card_ui:is(.front, .back) {
   background: linear-gradient(78deg, #22d067 -0.78%, #166534 94.94%);
-  padding: 1em;
+  padding: 1.5em 1.25em;
   border-radius: 1rem;
   box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -129,7 +133,7 @@ body {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
   padding: 1em;
   border-radius: 1.25rem;
-  padding-top: 5.125em;
+  padding-top: 6.25em;
 }
 
 /*# sourceMappingURL=styles.css.map */
