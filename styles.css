@@ -123,6 +123,7 @@ body {
   height: 100%;
   cursor: pointer;
   backface-visibility: hidden;
+  user-select: none;
 }
 .card_ui .front {
   z-index: 1000;
@@ -133,6 +134,7 @@ body {
   padding: 1em;
   border-radius: 1.25rem;
   padding-top: 6.25em;
+  margin-bottom: 2rem;
 }
 
 .submit {
@@ -147,6 +149,7 @@ body {
   border-radius: 0.5rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin-top: 2.625rem;
 }
 .submit:active {
   background-color: #145d30;

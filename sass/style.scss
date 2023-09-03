@@ -12,6 +12,7 @@
   height: 100%;
   cursor: pointer;
   backface-visibility: hidden;
+  user-select: none;
 
 }
 $flipDeg: -180deg;
@@ -75,6 +76,7 @@ body{
     padding: px-to-rem(16px, 1em);
     border-radius: px-to-rem(20px);
     padding-top: px-to-rem(100px, 1em);
+    margin-bottom: px-to-rem(32px);
 
   }
 }
@@ -91,6 +93,7 @@ body{
   border-radius: px-to-rem(8px);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin-top: px-to-rem(42px);
 
   &:active{
     background-color: darken(map-get($colors, 'button'), $amount: 2);
