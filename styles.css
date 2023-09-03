@@ -134,14 +134,38 @@ body {
   padding: 1em;
   border-radius: 1.25rem;
   padding-top: 6.25em;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3.75rem;
+}
+.card_form > .holder + .holder {
+  margin-top: 1.5em;
+}
+.card_form .holder {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.card_form .card_number .inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.card_form .card_number .inputs input {
+  max-width: 5rem;
+}
+
+.form_content {
+  max-width: 24em;
+  margin-inline: auto;
 }
 
 .submit {
   display: block;
   background-color: #166534;
   border: none;
-  max-width: 24em;
+  flex-basis: 100%;
+  align-self: stretch;
   width: 100%;
   margin-inline: auto;
   color: #ffffff;
@@ -156,6 +180,13 @@ body {
 }
 .submit:hover {
   background-color: #186d38;
+}
+
+input {
+  padding-inline: 0.5rem;
+  border: 2px solid #D9D9D9;
+  border-radius: 0.5rem;
+  padding-block: 0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

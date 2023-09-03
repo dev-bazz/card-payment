@@ -76,17 +76,48 @@ body{
     padding: px-to-rem(16px, 1em);
     border-radius: px-to-rem(20px);
     padding-top: px-to-rem(100px, 1em);
-    margin-bottom: px-to-rem(32px);
+display: flex;
+flex-direction: column;
+padding-inline: px-to-rem(60px);
+
+&> .holder + .holder{
+  margin-top: px-to-rem(24px, 1em);
+}
+.holder{
+  gap: px-to-rem(8px);
+  display: flex;
+  flex-direction: column;
+}
+
+.card_number{
+  .inputs{
+    display: flex;
+    justify-content: space-between;
+    gap: px-to-rem(8px);
+    input{
+      max-width: px-to-rem(80px);
+    }
+  }
+}
+
+
 
   }
 }
 
+.form_content{
+  max-width: px-to-rem(384px, 1em);
+  margin-inline: auto;
+}
 .submit{
   display: block;
   background-color: map-get($colors, 'button');
   border: none;
-  max-width: px-to-rem(384px, 1em);
-  width: 100%;
+  flex-basis: 100%;
+  align-self: stretch;
+width: 100%;
+
+
   margin-inline: auto;
   color: map-get($colors, 'white');
   padding-block: px-to-rem(16px) ;
@@ -103,4 +134,9 @@ body{
   }
 }
 
-
+input {
+  padding-inline: px-to-rem(8px);
+  border:2px solid map-get($colors, 'grey');
+  border-radius: px-to-rem(8px);
+  padding-block: px-to-rem(8px);
+}
