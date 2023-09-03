@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "jsdom": "^22.1.0",
+    "sass": "^1.66.1"
+  },
+  "scripts": {
+    "watchSass": "sass --watch sass/style.scss:styles.css"
+  }
+}
