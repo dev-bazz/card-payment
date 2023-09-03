@@ -79,6 +79,40 @@ body {
   font-family: inter;
 }
 
+.card_ui_number {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.card_flip {
+  text-transform: uppercase;
+}
+.card_flip .card_uuid {
+  font-size: 18px;
+  margin-top: 1.25rem;
+}
+@media (min-width: 600px) {
+  .card_flip .card_uuid {
+    font-size: 24px;
+  }
+}
+.card_flip .card_ui_sub {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.card_flip .card_ui_sub label {
+  font-size: 10px;
+  color: #EFEFEF;
+}
+.card_flip .card_ui_sub .sub-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .card {
   max-width: 36.75rem;
   margin-inline: auto;
@@ -110,14 +144,14 @@ body {
   }
 }
 .card_flip:hover {
-  transform: rotateX(-180deg);
+  transform: rotateY(-180deg);
 }
 .card_flip .icons {
   display: flex;
   justify-content: space-between;
 }
 .card_flip .back {
-  transform: rotateX(-180deg);
+  transform: rotateY(-180deg);
   display: grid;
   place-items: center;
 }
