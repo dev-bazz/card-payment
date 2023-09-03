@@ -123,7 +123,6 @@ body {
   height: 100%;
   cursor: pointer;
   backface-visibility: hidden;
-  user-select: none;
 }
 .card_ui .front {
   z-index: 1000;
@@ -134,6 +133,26 @@ body {
   padding: 1em;
   border-radius: 1.25rem;
   padding-top: 6.25em;
+}
+
+.submit {
+  display: block;
+  background-color: #166534;
+  border: none;
+  max-width: 24em;
+  width: 100%;
+  margin-inline: auto;
+  color: #ffffff;
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.submit:active {
+  background-color: #145d30;
+}
+.submit:hover {
+  background-color: #186d38;
 }
 
 /*# sourceMappingURL=styles.css.map */

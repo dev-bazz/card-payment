@@ -12,7 +12,7 @@
   height: 100%;
   cursor: pointer;
   backface-visibility: hidden;
-  user-select: none;
+
 }
 $flipDeg: -180deg;
 body{
@@ -79,5 +79,25 @@ body{
   }
 }
 
+.submit{
+  display: block;
+  background-color: map-get($colors, 'button');
+  border: none;
+  max-width: px-to-rem(384px, 1em);
+  width: 100%;
+  margin-inline: auto;
+  color: map-get($colors, 'white');
+  padding-block: px-to-rem(16px) ;
+  border-radius: px-to-rem(8px);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:active{
+    background-color: darken(map-get($colors, 'button'), $amount: 2);
+  }
+  &:hover{
+    background-color: lighten(map-get($colors, 'button'), $amount: 2);
+  }
+}
 
 
