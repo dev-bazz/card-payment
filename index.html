@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="./styles.css" />
+		<title>Payment Card</title>
+		<script
+			defer
+			src="./js/index.js"
+			type="module"></script>
+	</head>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Payment Card</title>
-    <script defer src="./js/index.js" type="module"></script>
-  </head>
-
-  <body>
-
-    <button class="btn">Click Me</button>
-
-  </body>
-
+	<body>
+		<!-- Card -->
+		<main class="card">
+			<div class="card_ui">
+				<!-- Card Ui -->
+				<div class="card_ui_number">
+					<div class="icons">
+						<div class="chip">
+							<img
+								src="./images/chip.png"
+								alt="chip"
+								draggable="false" />
+						</div>
+						<div class="card_type">
+							<img
+								src="./images/visa.png"
+								alt="visa" />
+						</div>
+					</div>
+					<p>
+						<span>0000</span> - <span>0000</span> - <span>0000</span> -
+						<span>0000</span>
+					</p>
+					<div class="card_ui_sub">
+						<div class="card_ui_holder">
+							<p>Card Holder</p>
+							<p>Clement Femi Bazuaye</p>
+						</div>
+						<div class="card_ui_expDate">
+							<p>Expiration Date</p>
+							<p>20/12/22</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<form action="#">
+				<!-- Card Number -->
+				<div class="card_number">
+					<label for="card_number">Card Number</label>
+					<div class="inputs">
+						<input type="text" /><input type="text" /><input type="text" /><input
+							type="text" />
+					</div>
+				</div>
+				<!-- Card Holder -->
+				<div class="card_holder">
+					<label for="card_holder">Card Holder</label>
+					<input type="text" />
+				</div>
+				<!-- Expiration Date -->
+				<div class="card_exp">
+					<label for="card_exp">Expiration Date</label>
+					<div class="exp_date"><input type="text" /><input type="text" /></div>
+					<div class="ccv"><input type="text" /></div>
+				</div>
+				<button>Submit</button>
+			</form>
+		</main>
+	</body>
 </html>

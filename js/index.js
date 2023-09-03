@@ -8,10 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('DOM fully loaded and parsed');
   conns();
-  const button = getDOM_elements("one", ".btn").addEventListener("click", () => {
-    console.log("button clicked");
 
-  })
 })
 
 
