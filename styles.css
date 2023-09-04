@@ -119,7 +119,7 @@ body {
   margin-inline: auto;
   position: relative;
   padding: 16px;
-  perspective: 62.5rem;
+  perspective: 50rem;
   color: #52525C;
 }
 .card_flip {

@@ -58,7 +58,7 @@ body {
 	margin-inline: auto;
 	position: relative;
 	padding: 16px;
-	perspective: px-to-rem(1000px);
+	perspective: px-to-rem(800px);
 	color: map-get($colors, "text");
 	&_flip {
 		display: grid;

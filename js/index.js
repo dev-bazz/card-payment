@@ -6,5 +6,14 @@ import { conns, getDOM_elements } from "./utilities.js";
  */
 document.addEventListener("DOMContentLoaded", () => {
 	console.log("DOM fully loaded and parsed");
-	conns();
+	const gg = getDOM_elements("one", ".card");
+
+	cardNumbers();
 });
+
+function cardNumbers() {
+	const cardNumber = getDOM_elements("all", ".card_num");
+	cardNumber.forEach((card) => {
+		console.log(card);
+	});
+}
