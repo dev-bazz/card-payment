@@ -1,203 +1,193 @@
-@use './reset';
-@use './variables' as *;
-@use './functions' as *;
+@use "./reset";
+@use "./variables" as *;
+@use "./functions" as *;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@mixin card{
-  background: map-get($colors, "gradient");
-  padding: px-to-rem(24px, 1em) px-to-rem(20px, 1em);
-  border-radius: px-to-rem(16px);
-  box-shadow: $card_ui;
-  position: absolute;
-width: 100%;
-aspect-ratio: 113/62;
-  cursor: pointer;
-  backface-visibility: hidden;
-  user-select: none;
-
+@mixin card {
+	background: map-get($colors, "gradient");
+	padding: px-to-rem(24px, 1em) px-to-rem(20px, 1em);
+	border-radius: px-to-rem(16px);
+	box-shadow: $card_ui;
+	position: absolute;
+	width: 100%;
+	aspect-ratio: 113/62;
+	cursor: pointer;
+	backface-visibility: hidden;
+	user-select: none;
 }
 $flipDeg: -180deg;
-body{
-  background-color: map-get($colors, 'background');
-  font-family: inter;
-
+body {
+	background-color: map-get($colors, "background");
+	font-family: inter;
 }
 
-.card_ui_number{
-  display: flex;
-  flex-direction: column;
-  gap: px-to-rem(8px);
-  justify-content: space-between;
-  align-items: space-between;
+.card_ui_number {
+	display: flex;
+	flex-direction: column;
+	gap: px-to-rem(8px);
+	justify-content: space-between;
+	align-items: space-between;
 }
-.card_flip{
-  text-transform: uppercase;
-  .card_uuid{
-    font-size: 18px;
-    margin-top: px-to-rem(20px);
-    @include custom-media-query('desktop', 600px) {
-      font-size: 24px;
-    }
-  }
-  .card_ui_sub{
-    margin-top: px-to-rem(24px);
-    display: flex;
-    justify-content: space-between;
+.card_flip {
+	text-transform: uppercase;
+	.card_uuid {
+		font-size: 18px;
+		margin-top: px-to-rem(20px);
+		@include custom-media-query("desktop", 600px) {
+			font-size: 24px;
+		}
+	}
+	.card_ui_sub {
+		margin-top: px-to-rem(24px);
+		display: flex;
+		justify-content: space-between;
 
-    label{
-      font-size: 10px;
-      color: #EFEFEF;
-    }
-    .sub-text{
-      font-size:14px;
-      font-weight:500;
-    }
-
-  }
-}
-
-.card{
-  max-width: px-to-rem(588px);
-  margin-inline: auto;
-  position: relative;
-  padding: 16px;
-  perspective: px-to-rem(1000px);
-  color: map-get($colors, 'text');
-   &_flip{
-    display: grid;
-    place-items: center;
-    width: clamp(px-to-rem(200px), 100%, px-to-rem(300px));
-    @include custom-media-query('desktop', 600px) {
-      width: clamp(px-to-rem(200px), 100%, px-to-rem(380px));
-    }
-    @include custom-media-query('mobile', 370px) {
-      width: clamp(px-to-rem(200px), 100%, px-to-rem(250px));
-    }
-    aspect-ratio: 113/62;
-
-    margin-inline: auto;
-    position: relative;
-    color: map-get($colors, 'white');
-    translate: 0 px-to-rem(52px);
-    transition: transform 0.8s ease-in-out;
-    transform-style: preserve-3d;
-
-    &:hover{
-      transform: rotateY($flipDeg);
-    }
-.icons{
-  display: flex;
-  justify-content: space-between;
-}
-    .front{
-
-    }
-    .back{
-      transform: rotateY($flipDeg);
-      display: grid;
-      place-items: center;
-    }
-   }
-
-
-  &_ui{
- &:is(.front, .back){
-  @include card;
- }
-
-
-  }
-  &_ui .front {
-    z-index: 1000;
-  }
-
-  &_form{
-    background-color: map-get($colors, 'white');
-    box-shadow: $main_card;
-    padding: px-to-rem(16px, 1em);
-    border-radius: px-to-rem(20px);
-    padding-top: px-to-rem(100px, 1em);
-display: flex;
-flex-direction: column;
-padding-inline: px-to-rem(24px);
-@include custom-media-query('desktop', 600px) {
-  padding-inline: px-to-rem(84px);
-  padding-bottom: px-to-rem(32px);
+		label {
+			font-size: 10px;
+			color: #efefef;
+		}
+		.sub-text {
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
 }
 
+.card {
+	max-width: px-to-rem(588px);
+	margin-inline: auto;
+	position: relative;
+	padding: 16px;
+	perspective: px-to-rem(1000px);
+	color: map-get($colors, "text");
+	&_flip {
+		display: grid;
+		place-items: center;
+		width: clamp(px-to-rem(200px), 100%, px-to-rem(300px));
+		@include custom-media-query("desktop", 600px) {
+			width: clamp(px-to-rem(200px), 100%, px-to-rem(380px));
+		}
+		@include custom-media-query("mobile", 370px) {
+			width: clamp(px-to-rem(200px), 100%, px-to-rem(250px));
+		}
+		aspect-ratio: 113/62;
 
-&> .holder + .holder{
-  margin-top: px-to-rem(14px);
+		margin-inline: auto;
+		position: relative;
+		color: map-get($colors, "white");
+		translate: 0 px-to-rem(52px);
+		transition: transform 0.8s ease-in-out;
+		transform-style: preserve-3d;
+
+		&:hover {
+			transform: rotateY($flipDeg);
+		}
+		.icons {
+			display: flex;
+			justify-content: space-between;
+		}
+		.front {
+		}
+		.back {
+			transform: rotateY($flipDeg);
+			display: grid;
+			place-items: center;
+		}
+	}
+
+	&_ui {
+		&:is(.front, .back) {
+			@include card;
+		}
+	}
+	&_ui .front {
+		z-index: 1000;
+	}
+
+	&_form {
+		background-color: map-get($colors, "white");
+		box-shadow: $main_card;
+		padding: px-to-rem(16px, 1em);
+		border-radius: px-to-rem(20px);
+		padding-top: px-to-rem(100px, 1em);
+		display: flex;
+		flex-direction: column;
+		padding-inline: px-to-rem(24px);
+		@include custom-media-query("desktop", 600px) {
+			padding-inline: px-to-rem(84px);
+			padding-bottom: px-to-rem(32px);
+		}
+
+		& > .holder + .holder {
+			margin-top: px-to-rem(14px);
+		}
+		.holder {
+			gap: px-to-rem(8px);
+			display: flex;
+			flex-direction: column;
+		}
+
+		.card_number {
+			.inputs {
+				display: grid;
+				justify-content: space-between;
+				grid-template-columns: repeat(4, minmax(20px, auto));
+				gap: px-to-rem(8px);
+				flex-wrap: wrap;
+				input {
+					max-width: px-to-rem(52px);
+				}
+			}
+		}
+
+		.card_holder {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 }
-.holder{
-  gap: px-to-rem(8px);
-   display: flex;
-  flex-direction: column;
+
+.form_content {
+	max-width: px-to-rem(384px, 1em);
+	margin-inline: auto;
 }
+.submit {
+	display: block;
+	background-color: map-get($colors, "button");
+	border: none;
+	flex-basis: 100%;
+	align-self: stretch;
+	width: 100%;
 
-.card_number{
-  .inputs{
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(4, minmax(20px, auto));
-    gap: px-to-rem(8px);
-    flex-wrap: wrap;
-    input{
-      max-width: px-to-rem(52px);
-    }
-  }
-}
+	margin-inline: auto;
+	color: map-get($colors, "white");
+	padding-block: px-to-rem(16px);
+	border-radius: px-to-rem(8px);
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	margin-top: px-to-rem(42px);
 
-.card_holder{
-  display: flex;
-  flex-direction: column;
-}
-
-  }
-}
-
-.form_content{
-  max-width: px-to-rem(384px, 1em);
-  margin-inline: auto;
-}
-.submit{
-  display: block;
-  background-color: map-get($colors, 'button');
-  border: none;
-  flex-basis: 100%;
-  align-self: stretch;
-width: 100%;
-
-
-  margin-inline: auto;
-  color: map-get($colors, 'white');
-  padding-block: px-to-rem(16px) ;
-  border-radius: px-to-rem(8px);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  margin-top: px-to-rem(42px);
-
-  &:active{
-    background-color: darken(map-get($colors, 'button'), $amount: 2);
-  }
-  &:hover{
-    background-color: lighten(map-get($colors, 'button'), $amount: 2);
-  }
+	&:active {
+		background-color: darken(map-get($colors, "button"), $amount: 2);
+	}
+	&:hover {
+		background-color: lighten(map-get($colors, "button"), $amount: 2);
+	}
 }
 
 :is(input, select) {
-  padding-inline: px-to-rem(8px);
-  border:2px solid map-get($colors, 'grey');
-  border-radius: px-to-rem(8px);
-  padding-block: px-to-rem(8px);
+	padding-inline: px-to-rem(8px);
+	border: 2px solid map-get($colors, "grey");
+	border-radius: px-to-rem(8px);
+	padding-block: px-to-rem(8px);
 }
 
-.dccv{
-  display: flex;
-  flex-grow: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  input{
-    max-width: px-to-rem(52px);
-  }
-
+.dccv {
+	display: flex;
+	flex-grow: wrap;
+	justify-content: space-between;
+	gap: 8px;
+	input {
+		max-width: px-to-rem(52px);
+	}
 }
