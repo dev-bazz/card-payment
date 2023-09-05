@@ -44,7 +44,7 @@ function cardNumbers() {
 			}
 			if (current.dataset.cardtype == "check") {
 				const value = e.target.value;
-				console.log(value[0]);
+				
 				value[0] == 4
 					? (image.src = "./images/visa.png")
 					: value[0] == 2 || value[0] == 5
