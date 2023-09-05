@@ -61,6 +61,5 @@ function cardNumbers() {
 			return;
 		}
 		holderUI.textContent = `${firstANDlastNames[0]} ${firstANDlastNames[1]}`;
-		console.log(firstANDlastNames);
 	});
 }
