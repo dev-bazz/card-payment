@@ -191,3 +191,9 @@ body {
 		max-width: px-to-rem(52px);
 	}
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

@@ -13,16 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
 function cardNumbers() {
 	const regex = new RegExp(/^\d+$/);
 	const cardNumber = getDOM_elements("all", ".card_num");
-	cardNumber.forEach((fourDigit) => {
+	const cardUiNumber = getDOM_elements("all", ".num_ui");
+
+	cardNumber.forEach((fourDigit, index) => {
 		fourDigit.addEventListener("focusout", (e) => {
-			const current = e.target,
-				currentValue = current.value;
+			const current = e.target;
+			let currentValue = current.value;
+
+			console.log("current value", cardUiNumber[index]);
+			if (!currentValue) {
+				cardUiNumber[index].textContent = "000";
+				return;
+			}
+
+			cardUiNumber[index].textContent = currentValue;
 
 			console.log("card UI", e.target.value);
 		});
 	});
 
 	cardNumber.forEach((fourDigit, index) => {
+		// console.log("digit inputs", fourDigit);
 		fourDigit.addEventListener("input", (e) => {
 			const current = e.target;
 			let currentValue = current.value;
@@ -33,7 +44,12 @@ function cardNumbers() {
 				return;
 			}
 
-			if (index < cardNumber.length - 1 && currentValue.length === maxDigit) {
+			if (index == cardNumber.length - 1 && currentValue.length == maxDigit) {
+				getDOM_elements("one", ".holderName").focus();
+				return;
+			}
+			if (index < cardNumber.length - 1 && currentValue.length == maxDigit) {
+				console.log("next");
 				cardNumber[index + 1].focus();
 			}
 		});

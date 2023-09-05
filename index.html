@@ -37,8 +37,10 @@
 								</div>
 							</div>
 							<p class="card_uuid">
-								<span>0000</span> - <span>0000</span> - <span>0000</span> -
-								<span>0000</span>
+								<span class="num_ui">0000</span> -
+								<span class="num_ui">0000</span> -
+								<span class="num_ui">0000</span> -
+								<span class="num_ui">0000</span>
 							</p>
 						</div>
 						<div class="card_ui_sub">
@@ -68,24 +70,31 @@
 					<label for="card_number">Card Number</label>
 					<div class="inputs">
 						<input
+							name="first"
 							class="card_num"
 							type="text"
-							required /><input
+							required
+							maxlength="4" /><input
 							required
 							type="text"
-							class="card_num" /><input
+							class="card_num"
+							maxlength="4" /><input
 							required
 							type="text"
-							class="card_num" /><input
+							class="card_num"
+							maxlength="4" /><input
 							type="text"
 							required
-							class="card_num" />
+							class="card_num"
+							maxlength="4" />
 					</div>
 				</div>
 				<!-- Card Holder -->
 				<div class="card_holder holder">
 					<label for="card_holder">Card Holder</label>
-					<input type="text" />
+					<input
+						class="holderName"
+						type="text" />
 				</div>
 				<!-- Expiration Date -->
 				<div class="card_exp holder">
@@ -119,7 +128,8 @@
 						<div class="ccv">
 							<input
 								required
-								type="text" />
+								type="text"
+								maxlength="3" />
 						</div>
 					</div>
 				</div>
