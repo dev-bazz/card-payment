@@ -100,13 +100,13 @@ function cardNumbers() {
 
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
-		console.log("submit");
+		
 		const currentDate = new Date();
 		const expiration = new Date();
 		expiration.setMonth(expDate.value);
 		expiration.setFullYear(expYear.value);
 
-		console.log(expiration, `${expDate.value}/${expYear.value}`);
+		
 
 		if (expiration < currentDate) {
 			alert(`Your Card is expired 🙅‍♂️👎📛
