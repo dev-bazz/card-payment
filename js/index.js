@@ -16,7 +16,12 @@ function cardNumbers() {
 		holderUI = getDOM_elements("one", ".holderUI"),
 		ccvNumber = getDOM_elements("one", ".ccvNumber"),
 		ccvUI = getDOM_elements("one", ".ccv_ui"),
-		image = getDOM_elements("one", ".cardType");
+		image = getDOM_elements("one", ".cardType"),
+		expDate = getDOM_elements("one", ".exp_date_month"),
+		expYear = getDOM_elements("one", ".exp_date_year"),
+		form = getDOM_elements("one", ".card_form"),
+		uiEpmonth = getDOM_elements("one", ".exp_uidate"),
+		uiEpyear = getDOM_elements("one", ".exp_uiyear");
 
 	cardNumber.forEach((fourDigit, index) => {
 		fourDigit.addEventListener("focusout", (e) => {
@@ -44,7 +49,7 @@ function cardNumbers() {
 			}
 			if (current.dataset.cardtype == "check") {
 				const value = e.target.value;
-				
+
 				value[0] == 4
 					? (image.src = "./images/visa.png")
 					: value[0] == 2 || value[0] == 5
@@ -84,5 +89,36 @@ function cardNumbers() {
 			return;
 		}
 		ccvUI.textContent = current.value;
+	});
+
+	expDate.addEventListener("change", (e) => {
+		uiEpmonth.textContent = e.target.value;
+	});
+	expYear.addEventListener("change", (e) => {
+		uiEpyear.textContent = e.target.value;
+	});
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+		console.log("submit");
+		const currentDate = new Date();
+		const expiration = new Date();
+		expiration.setMonth(expDate.value);
+		expiration.setFullYear(expYear.value);
+
+		console.log(expiration, `${expDate.value}/${expYear.value}`);
+
+		if (expiration < currentDate) {
+			alert(`Your Card is expired 🙅‍♂️👎📛
+			Please update your card.
+
+			Thank you.
+			`);
+			return;
+		} else {
+			alert(`💰💸💸💰
+			Your payment was successful
+			💰💸💸💰`);
+		}
 	});
 }

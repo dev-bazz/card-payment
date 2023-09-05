@@ -51,7 +51,11 @@
 							</div>
 							<div class="card_ui_expDate">
 								<label>Expires</label>
-								<p class="sub-text">12/22</p>
+								<p class="sub-text">
+									<span class="exp_uidate">00</span>/<span class="exp_uiyear"
+										>00</span
+									>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -95,6 +99,7 @@
 				<div class="card_holder holder">
 					<label for="card_holder">Card Holder</label>
 					<input
+						required
 						class="holderName"
 						type="text" />
 				</div>
@@ -106,7 +111,14 @@
 							<select
 								required
 								name="month"
+								class="exp_date_month"
 								id="">
+								<option
+									disabled
+									selected
+									value="2">
+									Month
+								</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -121,10 +133,31 @@
 								<option value="12">12</option>
 							</select>
 							<select
+								class="exp_date_year"
 								required
 								name="year"
 								id="">
+								<option
+									disabled
+									value="1990"
+									selected>
+									year
+								</option>
 								<option value="2023">2023</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+								<option value="2030">2030</option>
+								<option value="2031">2031</option>
+								<option value="2032">2032</option>
+								<option value="2033">2033</option>
+								<option value="2034">2034</option>
+								<option value="2035">2035</option>
+								<option value="2036">2036</option>
+								<option value="2037">2037</option>
 							</select>
 						</div>
 						<div class="ccv">
