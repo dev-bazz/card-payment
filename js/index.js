@@ -13,7 +13,9 @@ function cardNumbers() {
 	const cardNumber = getDOM_elements("all", ".card_num"),
 		cardUiNumber = getDOM_elements("all", ".num_ui"),
 		holderNamer = getDOM_elements("one", ".holderName"),
-		holderUI = getDOM_elements("one", ".holderUI"); //?
+		holderUI = getDOM_elements("one", ".holderUI"),
+		ccvNumber = getDOM_elements("one", ".ccvNumber"),
+		ccvUI = getDOM_elements("one", ".ccv_ui");
 
 	cardNumber.forEach((fourDigit, index) => {
 		fourDigit.addEventListener("focusout", (e) => {
@@ -54,12 +56,21 @@ function cardNumbers() {
 		const current = e.target;
 
 		const firstANDlastNames = current.value.split(" ");
-
 		if (firstANDlastNames.length < 2) {
 			current.value = "";
 			holderUI.textContent = "please enter first & last name";
 			return;
 		}
 		holderUI.textContent = `${firstANDlastNames[0]} ${firstANDlastNames[1]}`;
+	});
+
+	ccvNumber.addEventListener("focusout", (e) => {
+		const current = e.target;
+		if (current.value.length < 3) {
+			ccvUI.textContent = "000";
+			current.value = "";
+			return;
+		}
+		ccvUI.textContent = current.value;
 	});
 }
