@@ -15,7 +15,8 @@ function cardNumbers() {
 		holderNamer = getDOM_elements("one", ".holderName"),
 		holderUI = getDOM_elements("one", ".holderUI"),
 		ccvNumber = getDOM_elements("one", ".ccvNumber"),
-		ccvUI = getDOM_elements("one", ".ccv_ui");
+		ccvUI = getDOM_elements("one", ".ccv_ui"),
+		image = getDOM_elements("one", ".cardType");
 
 	cardNumber.forEach((fourDigit, index) => {
 		fourDigit.addEventListener("focusout", (e) => {
@@ -40,6 +41,17 @@ function cardNumbers() {
 			if (!regex.test(currentValue)) {
 				e.target.value = currentValue.slice(0, -1);
 				return;
+			}
+			if (current.dataset.cardtype == "check") {
+				const value = e.target.value;
+				console.log(value[0]);
+				value[0] == 4
+					? (image.src = "./images/visa.png")
+					: value[0] == 2 || value[0] == 5
+					? (image.src = "./images/mastercard.png")
+					: value[0] == 3
+					? (image.src = "./images/american-express.png")
+					: (image.src = "./images/unknown.png");
 			}
 			if (index == cardNumber.length - 1 && currentValue.length == maxDigit) {
 				getDOM_elements("one", ".holderName").focus();
